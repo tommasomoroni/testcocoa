@@ -12,7 +12,7 @@ produces:
 
 host: 172.23.16.35
 
-schemes: [https]
+schemes: [ https ]
 
 paths:
   /user/login:
