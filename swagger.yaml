@@ -8,6 +8,7 @@ produces:
   - application/json
 
 host: 172.23.16.35
+schemes: http
 
 paths:
   /user/login:
