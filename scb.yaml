@@ -12,6 +12,8 @@ produces:
 
 host: 172.23.16.35
 
+schemes: [http, https]
+
 paths:
   /user/login:
     post:
