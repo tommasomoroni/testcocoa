@@ -1,0 +1,194 @@
+swagger: '2.0'
+
+info:
+  version: "0.0.1-SNAPSHOT"
+  title: Santander Consumer Bank API
+
+produces:
+  - application/json
+
+host: 172.23.16.35
+
+paths:
+  /user/login:
+    post:
+      parameters:
+        - name: user
+          in: formData
+          type: string
+          required: true
+        - name: password
+          in: formData
+          type: string
+          required: true
+      responses:
+        200:
+          description: Successful response
+          schema:
+            type: object
+            properties:
+              success:
+                type: boolean
+  /user/attributi:
+    post:
+      parameters:
+        - name: user
+          in: formData
+          type: string
+      responses:
+        200:
+          description: Successful response
+          schema:
+            type: object
+            properties:
+              tipoutente: 
+                type: string
+              attivo: 
+                type: string
+              codiceinternet: 
+                type: string
+              codicefinco: 
+                type: string
+              cognomenome:
+                type: string
+              codicefiscale: 
+                type: string
+              telefono: 
+                type: string
+              email: 
+                type: string
+              emailnotifica: 
+                type: string
+              layout: 
+                type: string
+              gruppo: 
+                type: string
+              visprovvigioni: 
+                type: string
+              redchallenge: 
+                type: string
+              OFFtabelle:
+                type: array
+                items:
+                  type: string
+              OFFprodotti:
+                type: array
+                items:
+                  type: string
+              OFFbeni:
+                type: array
+                items:
+                  type: string
+              OFFservizi:
+                type: array
+                items:
+                  type: string
+  /user/nuoviattributi:
+    post:
+      parameters:
+        - name: user
+          in: formData
+          type: string
+        - name: attivo
+          in: formData
+          type: string
+        - name: redchallenge
+          in: formData
+          type: string
+        - name: visprovvigioni
+          in: formData
+          type: string
+        - name: cognomenome
+          in: formData
+          type: string
+        - name: codicefiscale
+          in: formData
+          type: string
+        - name: telefono
+          in: formData
+          type: string
+        - name: email
+          in: formData
+          type: string
+        - name: emailnotifica
+          in: formData
+          type: string
+        - name: layout
+          in: formData
+          type: string
+        - name: gruppo
+          in: formData
+          type: string
+        - name: OFFtabelle
+          in: formData
+          type: array
+          items:
+            type: string
+        - name: OFFprodotti
+          in: formData
+          type: array
+          items:
+            type: string
+        - name: OFFbeni
+          in: formData
+          type: array
+          items:
+            type: string
+        - name: OFFservizi
+          in: formData
+          type: array
+          items:
+            type: string
+      responses:
+        200:
+          description: Successful response
+          schema:
+            type: object
+            properties:
+              tipoutente: 
+                type: string
+              attivo: 
+                type: string
+              codiceinternet: 
+                type: string
+              codicefinco: 
+                type: string
+              cognomenome:
+                type: string
+              codicefiscale: 
+                type: string
+              telefono: 
+                type: string
+              email: 
+                type: string
+              emailnotifica: 
+                type: string
+              layout: 
+                type: string
+              gruppo: 
+                type: string
+              visprovvigioni:
+                type: string
+              redchallenge: 
+                type: string
+              OFFtabelle:
+                description: L’ array OFFtabelle è un array a chiavi numeriche per ogniuna delle quali viene assegnato un codice tabella finanziaria disabilitato. 
+                type: array
+                items:
+                  type: string
+              OFFprodotti:
+                description: L’ array OFFprodotti è un array a chiavi numeriche per ognuno dei quali viene assegnato un codice prodotto disabilitato.
+                type: array
+                items:
+                  type: string
+              OFFbeni:
+                description: L’ array OFFbeni è un array a chiavi numeriche per ognuno dei quali viene assegnato un   codice bene disabilitato. 
+                type: array
+                items:
+                  type: string
+              OFFservizi:
+                description: L’ array OFFservizi è un array a chiavi numeriche per ognuno dei quali viene assegnato un  codice servizio disabilitato. 
+                type: array
+                items:
+                  type: string
+          
