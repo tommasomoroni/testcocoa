@@ -1,0 +1,231 @@
+swagger: "2.0"
+
+info:
+  version: "1.2"
+  title: SCB OCS API
+
+consumes:
+  - application/json
+
+produces:
+  - application/json
+
+basePath: /swagger-web/ocs
+
+paths:
+  /user/login:
+    post:
+      tags:
+        - user
+      parameters:
+        - name: body
+          in: body
+          required: true
+          schema:
+            type: object
+            required:
+              - user
+              - password
+            properties:
+              user:
+                type: string
+                example: STILCAR_MIC
+              password:
+                type: string
+                example: stilcar2!
+      responses:
+        default:
+          description: Successful response
+          schema:
+            type: object
+            properties:
+              success:
+                type: boolean
+  /user/attributi:
+    post:
+      tags:
+        - user
+      parameters:
+        - name: body
+          in: body
+          required: true
+          schema:
+            type: object
+            required:
+              - user
+            properties:
+              user:
+                type: string
+                example: STILCAR_MIC
+      responses:
+        default:
+          description: Successful response
+          schema:
+            type: object
+            properties:
+              tipoutente: 
+                type: string
+              attivo: 
+                type: string
+              codiceinternet: 
+                type: string
+              codicefinco: 
+                type: string
+              cognomenome:
+                type: string
+              codicefiscale: 
+                type: string
+              telefono: 
+                type: string
+              email: 
+                type: string
+              emailnotifica: 
+                type: string
+              layout: 
+                type: string
+              gruppo: 
+                type: string
+              visprovvigioni: 
+                type: string
+              redchallenge: 
+                type: string
+              OFFtabelle:
+                type: array
+                items:
+                  type: string
+              OFFprodotti:
+                type: array
+                items:
+                  type: string
+              OFFbeni:
+                type: array
+                items:
+                  type: string
+              OFFservizi:
+                type: array
+                items:
+                  type: string
+  /user/nuoviattributi:
+    post:
+      tags:
+        - user
+      parameters:
+        - name: body
+          in: body
+          required: true
+          schema:
+            type: object
+            properties:
+              user: 
+                type: string
+                example: STILCAR_MIC
+              attivo:
+                type: string
+                example: S
+              redchallenge:
+                type: string
+                example: S
+              visprovvigioni:
+                type: string
+                example: S
+              cognomenome:
+                type: string
+                example: "Baruzzo Michele"
+              codicefiscale:
+                type: string
+                example: ""
+              telefono:
+                type: string
+                example: 3310000000
+              email:
+                type: string
+                example: michele.baruzzo@consulenti.santanderconsumer.it
+              emailnotifica:
+                type: string
+                example: michele.baruzzo@consulenti.santanderconsumer.it
+              layout:
+                type: string
+                example: 250
+              groppo:
+                type: string
+                example: guest
+              OFFtabelle: 
+                type: array
+                items:
+                  type: string
+                example: []
+              OFFprodotti:
+                type: array
+                items:
+                  type: string
+                example: ["15", "27"]
+              OFFbeni:
+                type: array
+                items:
+                  type: string
+                example: []
+              OFFservizi:
+                type: array
+                items:
+                  type: string
+                example: []
+      responses:
+        default:
+          description: Successful response
+          schema:
+            type: object
+            properties:
+              success:
+                type: boolean
+  /loader/beni:
+    post:
+      tags:
+        - loader
+      parameters:
+        - name: body
+          in: body
+          required: true
+          schema:
+            type: object
+            required:
+              - codicefinco
+            properties:
+              codicefinco:
+                type: string
+                example: 196
+      responses:
+        default:
+          description: Successful response
+          schema:
+            type: object
+            properties:
+              success:
+                type: boolean
+              data:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    codice:
+                      type: string
+                    descrizione:
+                      type: string
+  /loader/tabelle:
+    post:
+      tags:
+        - loader
+      parameters:
+        - name: body
+          in: body
+          required: true
+          schema:
+            type: object
+            required:
+              - codicefinco
+            properties:
+              codicefinco:
+                type: string
+                example: 196
+      responses:
+        default:
+          description: Successful response
